@@ -2,11 +2,12 @@
 # coding:utf-8
 
 import requests
-import requests
+import re
 
 latest = requests.get('https://raw.githubusercontent.com/l26/get-id/master/id.list').text
 latest = latest[0:len(latest) - 1]
 idList = latest.split('\n')
+http = requests.Session()
 
 # 获得一个新的 API authenticity_token
 def getRes():
@@ -17,9 +18,9 @@ def getRes():
         loc2 = re.search('csrf="', res).span()
         res = res[loc2[1]:len(res) - 1]
         return res
-    except Exception as e:
+    except:
         return getRes()
-    
+
 # 获取对应 username status_code
 def getCode(form):
     try:
@@ -29,7 +30,7 @@ def getCode(form):
             res = getRes()
             return getCode(form)
         return code
-    except Exception as e:
+    except:
         getCode(form)
 
 res = getRes()
