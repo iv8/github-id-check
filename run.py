@@ -19,9 +19,9 @@ def getRes():
         loc2 = re.search('csrf="', res).span()
         res = res[loc2[1]:len(res) - 1]
         return res
-    except Exception as e:
+    except:
         return getRes()
-    
+
 # 获取对应 username status_code
 def getCode(form):
     try:
@@ -31,7 +31,7 @@ def getCode(form):
             res = getRes()
             return getCode(form)
         return code
-    except Exception as e:
+    except:
         getCode(form)
 
 res = getRes()
