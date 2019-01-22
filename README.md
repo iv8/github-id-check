@@ -27,3 +27,13 @@ python -u find.py
 
 python -u run.py
 ```
+
+## 运行日志
+
+> https://travis-ci.com/iv8/get-id/builds/98112860
+
+> https://travis-ci.com/iv8/get-id/builds/98122469
+
+> https://travis-ci.com/iv8/get-id/builds/98138364
+
+> https://travis-ci.com/iv8/get-id/builds/98147575
