@@ -13,3 +13,9 @@ for id in idList:
     # 查找一个全英文的 GitHub ID 
     if char.find(id[0]) != -1 and char.find(id[1]) != -1 and char.find(id[2]) != -1:
         print(id)
+    # 查找一个 AAB 类型的 GitHub ID
+    #if char.find(id[0]) == char.find(id[1]) != -1:
+    #    print(id)
+    # 查找一个包含数字的 GitHub ID
+    #if num.find(id[0]) != -1 or num.find(id[1]) != -1 or num.find(id[2]) != -1:
+    #    print(id)
