@@ -3,6 +3,7 @@
 
 import requests
 import re
+import time
 
 latest = requests.get('https://raw.githubusercontent.com/l26/get-id/master/id.list').text
 latest = latest[0:len(latest) - 1]
