@@ -4,11 +4,13 @@ import requests
 import re
 import time
 
+# 定义匹配的字符
 char = '0123456789abcdefghijklmnopqrstuvwxyz-'
 
 print('Begin Find\n------------------------------------')
 http = requests.Session()
 
+# 获得一个新的 API authenticity_token
 def getRes():
     try:
         res = http.get("https://github.com").text
@@ -20,10 +22,11 @@ def getRes():
     except Exception as e:
         return getRes()
     
+# 获取对应 username status_code
 def getCode(form):
     try:
         code = http.post('https://github.com/signup_check/username', data=form).status_code
-        if code == 429:
+        if code == 429: # GitHub API 请求频繁被封禁 IP
             time.sleep(5)
             res = getRes()
             return getCode(form)
