@@ -6,4 +6,4 @@ before_install:
 install:
   - pip install --upgrade pip && pip install -r requirements.txt
 script:
-  - python -u run.py
+  - python -u review.py
